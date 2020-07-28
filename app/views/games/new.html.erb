@@ -1,0 +1,23 @@
+
+
+<h1>Countdown</h1>
+<h3>Enter the longest word that you can find</h3>
+
+<div class="letter_box" style="list-style: none">
+
+    <% @letters.each_with_index do |letter, index| %>
+    <li><%= letter %> </li>
+
+    <% end %>
+</div>
+
+
+<div class="form-card">
+  <form form autocomplete="off" action="/score" method="POST">
+    <input class="box" type="text" placeholder="Type a word" name="input">
+    <input class="button" type= "submit" value="Submit">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  </form>
+</div>
+
